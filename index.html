@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio Website</title>
+    <style>
+    
+    /* Animation keyframes */
+@keyframes expand {
+    0% {
+        transform: scale(0); /* Starting scale */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5); /* Increased scale */
+        opacity: 0;
+    }
+}
+
+/* Animated element */
+.mouse-animation {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #caba2f; /* Animation color */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            /* Ensure animation is smooth */
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+
+        .mouse-animation.animate {
+            animation: expand 0.6s ease-out; /* Animation properties */
+        }
+</style>
+
+</head>
+<body>
+    <div class="mouse-animation"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mouseAnimation = document.querySelector('.mouse-animation');
+
+            document.addEventListener('mousemove', (e) => {
+                // Position the element at the cursor
+                mouseAnimation.style.top = `${e.clientY}px`;
+                mouseAnimation.style.left = `${e.clientX}px`;
+
+                // Trigger the animation
+                mouseAnimation.classList.remove('animate');
+                void mouseAnimation.offsetWidth; // Trigger a reflow
+                mouseAnimation.classList.add('animate');
+            });
+        });
+    </script>
+    <header>
+        <a href="#" class="logo"></a>
+
+        <nav>
+            <a  href="#" class="active">Home</a>
+            <a   href="#skills">Skills</a>
+            <a  href="#education">Education</a>
+            <a  href="#experience">Experience</a>
+            <a  href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+
+    <section class="home">
+        <div class="home-img">
+            <img src="C:\Users\ansh sharma\Desktop\portfolio\IMG_9224.JPG" alt="Ansh Sharma">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Ansh Pawan Sharma</span></h1>
+              <h3 class="typing-text"> <span></span></h3>
+            <p>I am a final year student at VIT Vellore pursuing BTech in Information Technology. I have strong skills in web development, networking, and database management. I am proficient in HTML/CSS, 
+                JavaScript, Python, SQL, and Networking having experience with tools like VS Code,Cisco Packet Tracer, MATLAB and MySQL. I have a strong 
+                command of complex problem-solving skills in data structures. I have strong communication and leadership 
+                skills.</p>
+                
+                
+
+        
+            <div class="linkedin-container">
+                  
+                <a href="https://www.linkedin.com/in/ansh-pawan-sharma-487a01226/" class="btn">Linkedin</a>
+               
+            </div>
+        
+            
+            
+        </div>
+   
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="horizontal-section" >
+        <div class="block">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Java, Python, JavaScript</li>
+                <li><strong>Web Development:</strong> HTML, CSS, React.js, Node.js</li>
+                <li><strong>Databases:</strong> MySQL, MongoDB</li>
+                <li><strong>Networking:</strong> TCP/IP, DNS, Network Security</li>
+                <li><strong>Tools:</strong> VS Code, Git </li>
+                <li><strong>Other Skills:</strong> Data Structures, Algorithms, Leadership, Communication</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>More Skills</h2>
+            <ul>
+                <li><strong>Project Management:</strong> Agile, Scrum</li>
+                <li><strong>AI/ML:</strong> Basic ML algorithms, AI concepts</li>
+                <li><strong>Operating Systems:</strong> Windows</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+                <li><strong>Problem Solving:</strong> Competitive Programming</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>Soft Skills</h2>
+            <ul>
+                <li><strong>Communication:</strong> Effective verbal and written communication</li>
+                <li><strong>Leadership:</strong> Team management and mentoring</li>
+                <li><strong>Collaboration:</strong> Cross-functional team work</li>
+                <li><strong>Adaptability:</strong> Quick learner, flexible</li>
+                <li><strong>Critical Thinking:</strong> Analytical problem-solving</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="horizontal-section" >
+        <div class="block">
+            <h2>Education</h2>
+            <h3>B.Tech in Information Technology</h3>
+            <p>VIT Vellore, 2020-2024</p>
+            <p>Relevant Coursework: Web Development, Database Management Systems, Computer Networks, Data Structures and Algorithms</p>
+
+            <h2>Class 12th </h2>
+            <h3>The Millenium School,Mohali</h3>
+            <p>Grade:84.6%</p>
+            
+
+            <h2>Class 10th</h2>
+            <h3>Green Land Convent School,Punjab</h3>
+            <p>Grade:81.6%</p>
+        </div>
+        <div class="block">
+            <h2>Certifications</h2>
+            <ul>
+                <li>The Complete Web Development Course, Udemy</li>
+                <li>Entrepreneurship, NPTEL</li>
+                <li>Forests & Thier Management, NPTEL</li>
+                
+            </ul>
+        </div>
+        <div class="block">
+            <h2>Extra Curricular</h2>
+            <ul>
+                <li>Secretary- Design Club Pixelate, VIT (Jan,2024- Present)</li>
+                <li>Management Head, VIT (August 2023-December,2023)</li>
+                <li>Participated in Smart India Hackathon</li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="horizontal-section" >
+        <div class="block">
+            <h2>Experience</h2>
+            <h2>Database Intern</h2>
+            <p>BHEL Bhopal, June 2024 - July 2024</p>
+            <p>Worked on optimizing and managing databases, improving data retrieval processes.</p>
+
+            <h2>Network Intern</h2>
+            <p>KGOC GLOBAL LLB,October 2023 - November 2023</p>
+            <p>Gained hands-on experience in network management and troubleshooting, contributing to the development of secure network architectures.</p>
+        </div>
+        
+        <div class="block">
+            <h2>Projects</h2>
+            <h2>Smart Dustbin using NodeMCU</h2>
+            
+            <p> A Smart Dustbin, using NodeMCU to automate waste management.Equipped with sensors, the dustbin detects fill levels and sends real-time data to a central system. NodeMCU processes this information to optimize waste collection routes, improving efficiency and reducing manual monitoring. The system also features alerts for timely disposal.</p>
+           
+              
+
+            
+             <h2>Password Manager</h2>
+            
+                
+             <p> A password manager made using python and its concepts, stores the passwords of a user 
+                having different logins for both admins and Users and the passwords stored are 
+                encrypted by using blowfish algorithm.
+             </p>
+        </div>
+        <div class="block">
+            <h2>
+                Hobbies
+            </h2>
+            <ul>
+                <li>Cricket</li>
+                <li>Chess (State Player)</li>
+            </ul>
+            
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="horizontal-section" >
+        <div class="block" >
+            <h2>Contact Me</h2>
+            <p>You can reach out to me through the following channels:</p>
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:anshpawan24@gmail.com">anshpawan24@gmail.com</a></li>
+                <li><i class="fa-solid fa-phone"></i> Phone: +916283318808</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>Connect Online</h2>
+            <p>Connect with me on my socials:</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ansh-pawan-sharma-487a01226/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/anshp_sharma/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="block">
+            <h2>Send a Message</h2>
+            <form action="mailto:anshpawan24@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ansh Pawan Sharma. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
